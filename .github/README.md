@@ -1,17 +1,4 @@
 
-<<<<<<< HEAD
-<br>
-
-<p align="center">
-  |<a href="#knowledge"> Knowledge Acquired</a> | 
-  <a href="#technologies">Technologies</a> | 
-  <a href="#layout">Layout</a> |  
-</p>
-
-<br>
-
-<p align="center"><img src = "preview.jpg"></p>
-=======
 <h1 align= "center">SOCIAL TREE</h1>
 
 <p align = "center"><a href="#knowledge">Knowledge Acquired</a> | 
@@ -21,7 +8,7 @@
 <br>
 
 <p align = "center"><img src = "preview.jpg"></p>
->>>>>>> d12dc698f421a3cf7ae868d97ecb8467b4c699f2
+
 
 <h2 id="knowledge">📖 Knowledge Acquired</h2>
 
