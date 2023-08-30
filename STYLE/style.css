@@ -1,0 +1,170 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --text-color: white;
+  --bg-url: url(IMG/assets/bg-mobile.jpg) no-repeat top center/cover;
+  --stroke-color:rgba(255, 255, 255, 0.5);
+  --surface-color:rgba(255, 255, 255, 0.05);
+  --surface-color-hover:rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(IMG/assets/moon-stars.svg);
+}
+
+.light{
+  --text-color: black;
+  --bg-url: url(IMG/assets/bg-mobile-light.jpg) no-repeat top center/cover;
+  --stroke-color:rgba(0, 0, 0, 0.5);
+  --surface-color:rgba(0, 0, 0, 0.05);
+  --surface-color-hover:rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(IMG/assets/sun.svg);
+}
+
+body{
+  /*
+  background-image: url(IMG/assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  /*top center -- funcionalidade para ele centralizar a imagem no eixo x e começar a imagem no topo do eixo y
+  background-position: top center;
+  background-size: cover;*/
+
+  /*background: color image repeat position/size (atalho para todas as funcões acima*/
+  background: var(--bg-url);
+}
+
+body *{
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+}
+
+#container{
+  width: 100%;
+  max-width: 588px;
+  height: 712px;
+  /*para alinhar uma caixa ao meio, utilizamos a função margin:auto;, funciona apenas para a largura, não a altura*/
+  /*O margin tem seus contents como um relógio, top, right, bottom, left */
+  /**/
+  margin: 56px auto 32px;
+  padding: 0 24px;
+}
+
+/*PROFILE*/
+#profile{
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img{
+  /*display é a visualização do objeto*/
+  width: 112px;
+  /*em elementos in-line por natureza, o margin auto não funciona */
+}
+
+#profile p{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+#switch{
+  position: relative;
+  width: 64px;
+  /*quando sua tag é display block, utilizamos o margin: (em cima/em baixo, esquerda/direita)*/
+  margin: 4px auto;
+}
+
+/*SWITCH*/
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.light #switch button{
+  left: 0;
+  right: initial;
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/*links*/
+ul{
+  list-style: none;
+  /*o gap da espaço entre os conteúdos de um elemento (só funciona no display flex ou grid  */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  /*border radius é o arredondamento das pontas*/
+  border-radius: 8px;
+  /*prefixo utlizado por causa de alguns browsers*/
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+/*hover é o pseudo-selector --> função para especificar quando o mouse passar por cima*/
+ul li a:hover{
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links{
+  /*font-size dentro da div, ele vai aumentar o tamanho de tudo que esteja na div, seja imagem ou texto*/
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#social-links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  border-radius: 50%;
+  padding: 16px;
+}
+
+#social-links a:hover{
+  background:var(--highlight-color);
+  /*border radius 50% faz uma bola perfeita*/
+}
+
+footer{
+  /*Para textos, podemos utilizar a função "text-align:center"*/
+  text-align: center;
+  padding: 24px 0;
+  font-size: 14px;
+}
